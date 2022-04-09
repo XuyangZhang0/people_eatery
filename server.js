@@ -36,6 +36,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+app.use('/bulma', express.static(path.join(__dirname, 'node_modules/bulma-extensions/bulma-accordion/dist')));
+
+
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
