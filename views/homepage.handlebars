@@ -1,5 +1,5 @@
 <!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
+{{!-- {{#each projects as |project| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
@@ -21,4 +21,55 @@
     </p>
   </div>
 </div>
-{{/each}}
+{{/each}} --}}
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Hello World
+      </h1>
+      <p class="subtitle">
+        My first website with <strong>Bulma</strong>!
+      </p>
+    </div>
+  </section>
+  <section class="accordions">
+  <article class="accordion is-active">
+    <div class="accordion-header toggle">
+      <p>Hello World</p>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+      </div>
+    </div>
+  </article>
+  <article class="accordion">
+    <div class="accordion-header">
+      <p>Hello World</p>
+      <button class="toggle" aria-label="toggle"></button>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+      </div>
+    </div>
+  </article>
+  <article class="accordion">
+    <div class="accordion-header">
+      <p>Hello World</p>
+      <button class="toggle" aria-label="toggle"></button>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+      </div>
+    </div>
+  </article>
+</section>
+<script type="text/javascript" src="/bulma/js/bulma-accordion.min.js">
+</script>
+<script>
+  var accordions = bulmaAccordion.attach();
+  console.log(accordions);
+  </script>
