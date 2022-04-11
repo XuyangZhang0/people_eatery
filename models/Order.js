@@ -18,8 +18,11 @@ Order.init(
                 key: 'id',
             },
         },
+
+    },
+    {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'order',
