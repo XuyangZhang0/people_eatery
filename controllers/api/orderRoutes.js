@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
             tag_id,
           };
         });
-        return ProductTag.bulkCreate(orderItemArr);
+        return OrderItem.bulkCreate(orderItemArr);
       }
       // if no product tags, just respond
       res.status(200).json(product);

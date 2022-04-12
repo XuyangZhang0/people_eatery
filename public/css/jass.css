@@ -6,7 +6,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
+  /* line-height: 1.15; */
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
@@ -56,12 +56,12 @@ hr {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-pre {
+/* pre {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 1em;
+  /* font-size: 1em; */ 
   /* 2 */
-}
+/* } */
 
 /* Text-level semantics
    ========================================================================== */
@@ -109,9 +109,9 @@ samp {
 /**
  * Add the correct font size in all browsers.
  */
-small {
+/* small {
   font-size: 80%;
-}
+} */
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
