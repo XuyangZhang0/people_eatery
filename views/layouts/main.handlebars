@@ -1,48 +1,66 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  <link rel="stylesheet" href="/bulma/css/bulma-accordion.min.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>People Eatery</title>
+    <script
+      src="https://kit.fontawesome.com/3f947f4d9f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/bulma/css/bulma-accordion.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="foodemoji">🍲</span>
-        <a href="/">People Eatery</a>
-      </h1>
-      <nav>
-       <a href="/">Menu</a> |
-          <a href="/cart">Cart</a> |
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-          <a href="/orders">Orders</a> |
-        <button class="no-button" id="logout">Logout</button>
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+  </head>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+  <body>
+    <div class="flex-column justify-space-around">
+      <header class="display-flex justify-space-between align-center p-2">
+        <h1>
+          <span role="img" aria-label="foodemoji">🍲</span>
+          <a href="/" style="text-decoration: none; color: white; font-size: 75px;">People Eatery
+          </a>
+
+        </h1>
+        <nav>
+          <a href="/">Menu</a>
+          |
+          <a href="/cart">Cart</a>
+          |
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+            <a href="/profile">Orders</a>
+            |
+            <button class="no-button" id="logout">Logout</button>
+          {{else}}
+            <a href="/login">Login</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main class="container container-fluid mt-5">
+        <!-- Render the sub layout -->
+        {{{body}}}
+      </main>
+      <footer>
+
+      </footer>
+    </div>
+
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
 
 </html>

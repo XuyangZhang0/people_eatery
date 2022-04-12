@@ -1,7 +1,9 @@
-header, .project:not(:last-child) {
+/* header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
-}
-
+  color: white;
+  background-color: rgb(193, 0, 0);
+} */
+/* 
 .no-button {
   background: none;
   border: none;
@@ -21,4 +23,28 @@ header, .project:not(:last-child) {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
+} */
+
+.card {
+  border: none;
+  /* margin-left: 100px; */
+  border-radius: 0;
+  margin-left: 150px;
+  background-color: rgb(225, 225, 225);
 }
+
+header {
+  background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdGF1cmFudCUyMGZvb2R8ZW58MHx8MHx8&w=1000&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  border: none;
+  }
+  
+#Categories {
+  color: white;
+  background-color: rgb(193, 0, 0);
+  text-align: center;
+  height: 75px;
+  }
