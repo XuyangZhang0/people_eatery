@@ -6,6 +6,7 @@ router.post('/', async (req, res) => {
   /* req.body should look like this...
     {
       guest_id: 1, //uuid
+      table_number: 0,
       orderItems: [
           {
               quantity:1,
@@ -37,7 +38,7 @@ router.post('/', async (req, res) => {
             tag_id,
           };
         });
-        return ProductTag.bulkCreate(orderItemArr);
+        return OrderItem.bulkCreate(orderItemArr);
       }
       // if no product tags, just respond
       res.status(200).json(product);
