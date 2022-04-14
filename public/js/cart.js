@@ -32,24 +32,7 @@ var cartItemTemplate = `<div class='row mb-4 d-flex justify-content-between alig
 
 <hr class='my-4'>`
 
-let cartItems=[
-    {
-        id:1,
-        ImageUrl:'https://cdn.pixabay.com/photo/2016/11/20/09/06/bowl-1842294_150.jpg',
-        name:'French Fries',
-        category:'Appetizers',
-        quantity:'1',
-        price:'5.99',
-    },
-    {
-        id:4,
-        ImageUrl:'https://cdn.pixabay.com/photo/2014/10/22/18/43/rice-498688_150.jpg',
-        name:'Combination Fried Rice',
-        category:'Signature Dishes',
-        quantity:'1',
-        price:'12.99',
-    }
-]
+let cartItems = JSON.parse(localStorage.getItem("cartItems"));
 
 let cartItemsTemplate = '';
 
@@ -106,8 +89,25 @@ const orderSubmit = () =>{
         if(quantity > 0)
             orderItems.push({item_id,quantity})
     }
-    order = {table_number, orderItems}
+    order = {table_number, orderItems};
+
     console.log(JSON.stringify(order));
+
+    if (order) {
+      // Send a POST request to the API endpoint
+      const response = await fetch('/api/orders', {
+        method: 'POST',
+        body: JSON.stringify({order}),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      console.log(response);
+      if (response.ok) {
+        // If successful, redirect the browser to the profile page
+        alert('Order Placed!');
+      } else {
+        alert(response.statusText);
+      }
+    }
 }
 
 document
