@@ -11,12 +11,16 @@ Order.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        guest_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'guest',
-                key: 'id',
-            },
+        // guest_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'guest',
+        //         key: 'id',
+        //     },
+        // },
+        table_number: {
+            type: DataTypes.STRING, //changed from integer
+            allowNull: false,
         },
 
     },
