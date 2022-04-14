@@ -1,11 +1,13 @@
-INSERT INTO category (category_name, category_description)
-VALUES ("Appetizers", "Starters and shareables"),
-       ("Bar Classics", "Familiar dishes for casual outings or game days"),
-       ("Signature Dishes", "What we're known for. These are the ones you'll tell your friends about."),
-       ("Lighter Fare", "For our calorie-conscious friends."),
-       ("Desserts", "The cherry on top of your dining experience with us. For the 'Forget it' or 'I'm on vacation' moments.");
+USE peopleEatery_db;
 
-INSERT INTO dishes (category_ID, dish_name, dish_description, price)
+INSERT INTO category (name)
+VALUES ("Appetizers"),
+       ("Bar Classics"),
+       ("Signature Dishes"),
+       ("Lighter Fare"),
+       ("Desserts");
+
+INSERT INTO menu_item (category_id, name, description, price)
 VALUES (1, "Mini Meatballs", "Soft, slow-cooked mounds of meat seasoned and sauced to perfection.", 5.99),
        (1, "Loaded Potato Skins", "Crispy skins, cheese, bacon, chives.", 4.99),
        (1, "Steak and Cheese Eggrolls", "American spin on a Far-East classic.", 6.99),
@@ -27,8 +29,8 @@ VALUES (1, "Mini Meatballs", "Soft, slow-cooked mounds of meat seasoned and sauc
        (5, "Brownie Sundae", "Creamy french-vanilla served with a warm brownie. Eat quickly!", 5.99),
        (5, "Strawberry Cheesecake", "Hefty slice of the classic cheesecake", 6.99);
 
-INSERT INTO administrator (alias, pass)
-VALUES ("nick", "pass"),
-       ("kirk", "pass"),
-       ("venkata", "pass"),
-       ("xuyang", "pass");
+-- INSERT INTO administrator (alias, pass)
+-- VALUES ("nick", "pass"),
+--        ("kirk", "pass"),
+--        ("venkata", "pass"),
+--        ("xuyang", "pass");

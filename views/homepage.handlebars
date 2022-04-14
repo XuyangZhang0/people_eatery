@@ -24,306 +24,44 @@
 {{/each}} --}}
 
 
-  
-  <section class="accordions">
+  {{#each menu as |category| }}
+  <section class="accordions accordion-category" data-category_id={{category.id}}>
   <article class="accordion is-active">
     <div class="accordion-header toggle">
-      <p>Appetizers</p>
+      <p>{{category.name}}</p>
     </div>
     <div class="accordion-body">
       <div class="accordion-content">
-          <div class="card">
+
+        {{#each category.menu_items as |menu_item| }}
+          <div class="card" >
             <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
+              <h5 class="card-title">{{menu_item.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted" >{{menu_item.price}}</h6>
                   <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p> 
+                    {{menu_item.description}}</p> 
 
                   {{!-- <a href="https://via.placeholder.com/"><img src="https://via.placeholder.com/150"></a> --}}
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
+                  
+                  {{!-- <button type="button" class="btn btn-danger decrease">➖</button>
+                  <span class="quantity px-2" id="quantity-{{menu_item.id}}">0</span> --}}
+                  <button type="button" class="btn btn-success addToCart" 
+                  id="{{menu_item.id}}" 
+                  data-category={{category.name}} 
+                  data-price={{menu_item.price}} 
+                  data-name={{menu_item.name}} 
+                  data-id={{menu_item.id}}
+                  data-ImageUrl={{menu_item.url}}>Add To Cart</button>
               </div>                            
-            </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-                </div>
-              </div> 
-
-            <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>      
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-              </div>                            
-            </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-                </div>
-              </div>               
+            </div> 
+            {{/each}}
   </article>
-
-  <article class="accordion is-active">
-    <div class="accordion-header toggle">
-      <p>Bar Classics</p>
-    </div>
-    <div class="accordion-body">
-      <div class="accordion-content">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>      
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-              </div>                            
-            </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-                </div>
-              </div> 
-
-            <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>      
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-              </div>                            
-            </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-                </div>
-              </div>               
-  </article>
-
-  <article class="accordion is-active">
-    <div class="accordion-header toggle">
-      <p>Signature Dishes</p>
-    </div>
-    <div class="accordion-body">
-      <div class="accordion-content">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>      
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-              </div>                            
-            </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-                </div>
-              </div> 
-
-            <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>      
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-              </div>                            
-            </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-                </div>
-              </div>               
-  </article>
-
-  <article class="accordion is-active">
-    <div class="accordion-header toggle">
-      <p>Lighter Fare</p>
-    </div>
-    <div class="accordion-body">
-      <div class="accordion-content">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>      
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-              </div>                            
-            </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-                </div>
-              </div> 
-
-            <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>      
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-              </div>                            
-            </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-                </div>
-              </div>               
-  </article>
-
-  <article class="accordion is-active">
-    <div class="accordion-header toggle">
-      <p>Desserts</p>
-    </div>
-    <div class="accordion-body">
-      <div class="accordion-content">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>      
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-              </div>                            
-            </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-                </div>
-              </div> 
-
-            <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">MenuItem1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">10.99</h6>
-                  <p class="card-text">
-                    Some quick example text to build on the card 
-                    title and make up the bulk of the card's content.</p>      
-
-                  <button type="button" class="btn btn-danger decrease">➖</button>
-                  <span class="quantity px-2">0</span>
-                  <button type="button" class="btn btn-success increase">➕</button>
-              </div>                            
-            </div>
-            
-  </article>
-
 </section>
+{{/each}}
+
 <script type="text/javascript" src="/bulma/js/bulma-accordion.min.js">
 </script>
+<script src="./js/homepage.js"></script>
 <script>
   var accordions = bulmaAccordion.attach();
   console.log(accordions);

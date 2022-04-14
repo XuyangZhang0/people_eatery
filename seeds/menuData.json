@@ -1,0 +1,122 @@
+[
+    {
+     "name": "Mini Meatballs", 
+     "description": "Soft, slow-cooked mounds of meat seasoned and sauced to perfection.",
+     "price": 5.99,
+     "in_stock": true 
+    },
+    {
+    "name": "Loaded Potato Skins", 
+    "description": "Crispy skins, cheese, bacon, chives.", 
+    "price": 4.99,
+    "in_stock": true
+    },
+    {
+    "name": "Steak and Cheese Eggrolls", 
+    "description": "American spin on a Far-East classic.",
+    "price": 6.99,
+    "in_stock": true
+    },
+    {
+    "name": "Big-Time Brussels", 
+    "description": "Brussels packed with enough flavor to make you forget it's not meat", 
+    "price": 4.99,
+    "in_stock": true
+    },
+    {
+    "name": "All of the Above", 
+    "description": "Can't decide? How about a small portion of all our apps!", 
+    "price": 14.99,
+    "in_stock": true
+    },
+    {
+    "name": "Chicken Wings", 
+    "description": "Arguably the best dish on the planet. Served bone-in with your choice of sauce and tots", 
+    "price": 13.99,
+    "in_stock": true
+    },
+    {
+    "name": "Bar Burger", 
+    "description": "Half-pounder with onions, bacon, pepper-jack. Fries or tots to pair", 
+    "price": 9.99,
+    "in_stock": true
+    },
+    {
+    "name": "Nachos", 
+    "description": "Ground steak, pico, 3 cheeses, spicy salsa", 
+    "price": 10.99,
+    "in_stock": true
+    },
+    {
+    "name": "Simple Caesar", 
+    "description": "The classic. Add your choice of protein for an additional fee", 
+    "price": 8.99,
+    "in_stock": true
+    },
+    {
+    "name": "Combination Fried Rice",
+    "description": "Stop reading. Just order this. Please.",
+    "price": 12.99,
+    "in_stock": true
+    },
+    {
+    "name": "Cajun Penne",
+    "description": "Penne, andouille, chicken, bacon bits, spinach, red onion, cajun sauce blend.",
+    "price": 16.99,
+    "in_stock": true
+    },
+    {
+    "name": "Teriyaki Bento",
+    "description": "Your choice of protein served over white rice and sauteed broccoli. sesame seeds for garnish.",
+    "price": 14.99,
+    "in_stock": true
+    },
+    {
+    "name": "Head Chef Heroics", 
+    "description": "For the adventurous. A freestyled dish from our kitchen commander. Rotates frequently.",
+    "price": 19.99,
+    "in_stock": true
+    },
+    {
+    "name": "Superb Salmon",
+    "description": "Pan-seared salmon served with parmesean garlic asparagus",
+    "price": 10.99,
+    "in_stock": true
+    },
+    {
+    "name": "Supergreens Bowl",
+    "description": "Mix of all the buzzword health plants you've heard. Served with your choice of protein.",
+    "price": 9.99,
+    "in_stock": true
+    },
+    {
+    "name": "Succulent Skewers",
+    "description": "Grilled chicken kebabs with mixed vegetables. Served with a tangy vinaigrette",
+    "price": 11.99,
+    "in_stock": true
+    },
+    {
+    "name": "Chef Salad", 
+    "description": "NOT THE USUAL. Lighter equivalent of Head Chef Heroics. 500 cal total.", 
+    "price": 15.99,
+    "in_stock": true
+    },
+    {
+    "name": "Skillet Cookie",
+    "description": "Pan fried cookie with whipped cream", 
+    "price": 4.99,
+    "in_stock": true
+    },
+    {
+    "name": "Brownie Sundae",
+    "description": "Creamy french-vanilla served with a warm brownie. Eat quickly!",
+    "price": 5.99,
+    "in_stock": true
+    },
+    {
+    "name": "Strawberry Cheesecake",
+    "description": "Hefty slice of the classic cheesecake",
+    "price": 6.99,
+    "in_stock": true
+    }    
+]

@@ -42,7 +42,7 @@ OrderItem.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'menu_item',
+        modelName: 'order_item',
     }
 );
 
