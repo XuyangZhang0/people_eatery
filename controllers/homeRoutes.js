@@ -1,50 +1,56 @@
 const router = require('express').Router();
-const {  User, Guest } = require('../models');
+const {  User, Guest, MenuItem, Order, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    // const projectData = await Project.findAll({
-    //   include: [
-    //     {
-    //       model: User,
-    //       attributes: ['name'],
-    //     },
-    //   ],
-    // });
-
-
+    const categoryData = await Category.findAll({
+      include: [ { model: MenuItem} ],
+    });
+    
 
     // Serialize data so the template can read it
-    // const projects = projectData.map((project) => project.get({ plain: true }));
-
+    const menu = categoryData.map((menuItem) => menuItem.get({ plain: true }));
+    console.log(menu);
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      // projects, 
-      logged_in: req.session.logged_in 
+      menu
+      // logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// router.get('/project/:id', async (req, res) => {
+// router.get('/menuItem/:id', async (req, res) => {
 //   try {
-//     const projectData = await Project.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
+//     const menuData = await MenuItem.findByPk(req.params.id, {
+//       include: [ {model: Guest}, { model: User, attributes: ['name'],},],
 //     });
 
-//     const project = projectData.get({ plain: true });
+//     const menuItem = menuData.get({ plain: true });
 
-//     res.render('project', {
-//       ...project,
-//       logged_in: req.session.logged_in
+//     res.render('menuItem', {
+//       ...menuItem,
+//       // logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// router.get('/menuItem/:name', async (req, res) => {
+//   try {
+//     const menuData = await MenuItem.findByPk(req.params.name, {
+//       include: [ {model: Guest}, { model: User, attributes: ['name'],},],
+//     });
+
+//     const menuItem = menuData.get({ plain: true });
+
+//     res.render('menuItem', {
+//       ...menuItem,
+//       // logged_in: req.session.logged_in
 //     });
 //   } catch (err) {
 //     res.status(500).json(err);
@@ -98,11 +104,6 @@ router.get('/orders', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-router.get('/cart', (req, res) => {
-  res.render('cart');
-});
-
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
