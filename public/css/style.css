@@ -25,13 +25,12 @@
   margin-left: -5px;
 } */
 
-.card {
+/* .card {
   border: none;
-  /* margin-left: 100px; */
   border-radius: 0;
   margin-left: 150px;
   background-color: rgb(225, 225, 225);
-}
+} */
 
 header {
   background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdGF1cmFudCUyMGZvb2R8ZW58MHx8MHx8&w=1000&q=80');

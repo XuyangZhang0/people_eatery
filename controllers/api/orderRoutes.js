@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Order, OrderItem } = require('../../models');
-
+const withAuth = require('../../utils/auth');
 router.post('/', async (req, res) => {
   //bulk create
   /* req.body should look like this...
@@ -52,6 +52,23 @@ router.post('/', async (req, res) => {
     });
 });
 
+router.delete('/:id',  async (req, res) => {
+  try {
+    const orderData = await Order.destroy({
+      where: {
+        id: req.params.id,      
+      },
+    });
 
+    if (!orderData) {
+      res.status(404).json({ message: 'No order found with this id!' });
+      return;
+    }
+
+    res.status(200).json(orderData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

@@ -1,4 +1,4 @@
-let cartItemsArray = [];
+let cartItemsArray =JSON.parse(localStorage.getItem("cartItems"))|| []  ;
 
 const cartHandler = (event) => {
     event.preventDefault();

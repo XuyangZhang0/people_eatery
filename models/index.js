@@ -16,11 +16,12 @@ Category.hasMany(MenuItem, {
 
 OrderItem.belongsTo(Order, {
     foreignKey: 'order_id',
+    onDelete: 'cascade',
 });
 
 Order.hasMany(OrderItem, {
     foreignKey: 'order_id',
-    onDelete: 'SET NULL',
+    onDelete: 'cascade',
 });
 
 OrderItem.belongsTo(MenuItem,{
@@ -34,14 +35,14 @@ MenuItem.hasMany(OrderItem,{
 
 //one or many, technically many, but we don't require user login, so each order will be from a unique user
 //In that sense, each guest would have one order.
-Guest.hasOne(Order, {
-    foreignKey: 'guest_id',
-    onDelete: 'SET NULL',
-});
+// Guest.hasOne(Order, {
+//     foreignKey: 'guest_id',
+//     onDelete: 'SET NULL',
+// });
 
-Order.belongsTo(Guest, {
-    foreignKey: 'guest_id',
-});
+// Order.belongsTo(Guest, {
+//     foreignKey: 'guest_id',
+// });
 
 // relationships among guests, order, order_items
 

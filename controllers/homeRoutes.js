@@ -107,7 +107,9 @@ console.log(orderData);
 });
 router.get('/cart', (req, res) => {
   // console.log("cart attempted");
-  res.render('cart');
+  res.render('cart',{    
+    logged_in: req.session.logged_in 
+  });
 });
 
 router.get('/login', (req, res) => {
