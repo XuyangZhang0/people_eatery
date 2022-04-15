@@ -69,12 +69,14 @@ const onIncrementClick = (e) =>{
     document.querySelector(`#cartItem-quantity-${e}`).stepUp();
     document.querySelector('#totalItemsCount').innerHTML = `items ${GetTotalItemsCount()}`;
     document.querySelector('#totalItemsPrice').innerHTML = `\$ ${GetTotalPrice()}`;
+    document.querySelector('#itemsCountheader').innerHTML = `items ${GetTotalItemsCount()}`;
 }
 
 const onDecrementClick = (e) =>{
     document.querySelector(`#cartItem-quantity-${e}`).stepDown();
     document.querySelector('#totalItemsCount').innerHTML = `items ${GetTotalItemsCount()}`;
     document.querySelector('#totalItemsPrice').innerHTML = `\$ ${GetTotalPrice()}`;
+    document.querySelector('#itemsCountheader').innerHTML = `items ${GetTotalItemsCount()}`;
 }
 
 const orderSubmit = () =>{
@@ -100,8 +102,8 @@ const orderSubmit = () =>{
         body: JSON.stringify({order}),
         headers: { 'Content-Type': 'application/json' },
       }).then((response )=>{
-        console.log(response);
-
+       alert("Order placed!!")
+       document.location.replace("/");
       }).catch((error) =>{
         console.log(error);
       })
@@ -125,7 +127,7 @@ document
 .querySelector('#totalItemsPrice').innerHTML = `\$ ${GetTotalPrice()}`;
 
 document
-.querySelector('#totalItemsPrice').innerHTML = `\$ ${GetTotalPrice()}`;
+.querySelector('#itemsCountheader').innerHTML = `items ${GetTotalItemsCount()}`;
 
 document
   .querySelector('#order-submit')
