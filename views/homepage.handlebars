@@ -47,11 +47,11 @@
                   <span class="quantity px-2" id="quantity-{{menu_item.id}}">0</span> --}}
                   <button type="button" class="btn btn-success addToCart" 
                   id="{{menu_item.id}}" 
-                  data-category={{category.name}} 
-                  data-price={{menu_item.price}} 
-                  data-name={{menu_item.name}} 
-                  data-id={{menu_item.id}}
-                  data-ImageUrl={{menu_item.url}}>Add To Cart</button>
+                  data-category="{{category.name}}" 
+                  data-price="{{menu_item.price}}" 
+                  data-name="{{menu_item.name}}"
+                  data-id="{{menu_item.id}}"
+                  data-quantity=1>Add To Cart</button>
               </div>                            
             </div> 
             {{/each}}
