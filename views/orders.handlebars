@@ -1,8 +1,8 @@
 <div class="d-flex flex-row justify-content-around row row-cols-sm-2 row-cols-md-4">
     {{#each orders as |order| }}
-    <div class="card mb-3" style="width: 18rem;">
+    <div class="card mb-3" style="width: 24rem;">
         <div class="card-body">
-            <h5 class="card-title">OrderID: {{order.id}}</h5>
+            <h5 class="card-title">OrderID: {{order.id}}<button type="button" class="btn orderDeleteBtn" data-order_id="{{order.id}}" style="float:right;">❌</button></h5>
             <p class="card-text">Ordered by Table {{order.table_number}} at
                 {{order.createdAt}}</p>
         </div>
@@ -15,5 +15,5 @@
     {{/each}}
 
 </div>
-
+<script src="./js/orders.js"></script>
 {{!-- Guest {{order.guest.id}} {{order.guest.name}} at --}}
