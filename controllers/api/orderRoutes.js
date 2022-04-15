@@ -5,8 +5,7 @@ router.post('/', async (req, res) => {
   //bulk create
   /* req.body should look like this...
     {
-      guest_id: 1, //uuid
-      table_number: 0,
+      table_number: 0, //table number has to be part of the order object, otherwise we have to run guest create, then order, then orderItem bulk create.
       orderItems: [
           {
               quantity:1,
@@ -26,29 +25,33 @@ router.post('/', async (req, res) => {
        ]
     }
   */
-
-    Order.create(req.body)
+// console.log("table_number below");
+// console.log(req.body);
+    Order.create({table_number: req.body.order.table_number})
     .then((order) => {
-      // if there's product tags, we need to create pairings to bulk create in the ProductTag model
-      if (req.body.orderItems.length) {
-          //unfinished, need to work on the map function
-        const orderItemArr = req.body.tagIds.map((tag_id) => {
+     
+      if (req.body.order.orderItems.length) {
+          //adding the order.id into the orderItemArr
+        const orderItemArr = req.body.order.orderItems.map((orderItem) => {
           return {
             order_id: order.id,
-            tag_id,
+            item_id: orderItem.item_id,
+            quantity: orderItem.quantity,
+            served: false,
           };
         });
         return OrderItem.bulkCreate(orderItemArr);
       }
-      // if no product tags, just respond
+      
       res.status(200).json(product);
     })
-    .then((productTagIds) => res.status(200).json(productTagIds))
+    .then((orderItemIds) => res.status(200).json(orderItemIds))
     .catch((err) => {
       console.log(err);
       res.status(400).json(err);
     });
 });
+
 
 
 module.exports = router;

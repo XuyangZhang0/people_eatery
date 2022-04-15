@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {  User, Guest, MenuItem, Order, Category } = require('../models');
+const {  User, Guest, MenuItem, Order, Category, OrderItem } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -15,8 +15,8 @@ router.get('/', async (req, res) => {
     console.log(menu);
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      menu
-      // logged_in: req.session.logged_in 
+      menu,
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
@@ -76,34 +76,40 @@ router.get('/', async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
+
 router.get('/orders', withAuth, async (req, res) => {
-  try {
+  console.log("hit get orders routes");
+
+ 
     // Get all orders with
-    const projectData = await Project.findAll({
+    const orderData = await Order.findAll({
       include: [
-        {
-          model: Guest,
-        },
+        // {
+        //   model: Guest,
+        // },
         {
           model: OrderItem,
+          include: [{ model: MenuItem }],
         },
       ],
     });
 
-
-
+console.log("orderData below");
+console.log(orderData);
     // Serialize data so the template can read it
-    // const projects = projectData.map((project) => project.get({ plain: true }));
-
+    const orders = orderData.map((order) => order.get({ plain: true }));
     // Pass serialized data and session flag into template
-    res.render('orders', { 
-      // projects, 
-      logged_in: req.session.logged_in 
+    res.render('orders', {
+      orders, 
+      logged_in: req.session.logged_in
     });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  
 });
+router.get('/cart', (req, res) => {
+  // console.log("cart attempted");
+  res.render('cart');
+});
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

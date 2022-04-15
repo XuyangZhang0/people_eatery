@@ -23,6 +23,15 @@ Order.hasMany(OrderItem, {
     onDelete: 'SET NULL',
 });
 
+OrderItem.belongsTo(MenuItem,{
+    foreignKey: 'item_id',
+});
+
+MenuItem.hasMany(OrderItem,{
+    foreignKey: 'item_id',
+    onDelete: 'SET NULL',
+});
+
 //one or many, technically many, but we don't require user login, so each order will be from a unique user
 //In that sense, each guest would have one order.
 Guest.hasOne(Order, {

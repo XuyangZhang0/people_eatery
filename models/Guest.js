@@ -15,10 +15,10 @@ Guest.init(
             type: DataTypes.STRING,
             allowNull: true,
         },
-        table_number: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
+        // table_number: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        // },
        
     },
     {

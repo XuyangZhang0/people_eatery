@@ -3,15 +3,17 @@
     <div class="card mb-3" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">OrderID: {{order.id}}</h5>
-            <p class="card-text">Ordered by Guest {{order.guest.id}} {{order.guest.name}} at Table {{order.guest.table_number}} at
+            <p class="card-text">Ordered by Table {{order.table_number}} at
                 {{order.createdAt}}</p>
         </div>
         <ul class="list-group list-group-flush">
-            {{#each order.menuitems as |menuitem|}}
-            {{> menuitem-details}}
+            {{#each order.order_items as |order_item|}}
+            {{> order_item-details}}
             {{/each}}
         </ul>
     </div>
     {{/each}}
 
 </div>
+
+{{!-- Guest {{order.guest.id}} {{order.guest.name}} at --}}

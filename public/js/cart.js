@@ -95,18 +95,23 @@ const orderSubmit = () =>{
 
     if (order) {
       // Send a POST request to the API endpoint
-      const response = await fetch('/api/orders', {
+      const response = fetch('/api/orders', {
         method: 'POST',
         body: JSON.stringify({order}),
         headers: { 'Content-Type': 'application/json' },
-      });
-      console.log(response);
-      if (response.ok) {
-        // If successful, redirect the browser to the profile page
-        alert('Order Placed!');
-      } else {
-        alert(response.statusText);
-      }
+      }).then((response )=>{
+        console.log(response);
+
+      }).catch((error) =>{
+        console.log(error);
+      })
+      
+      // if (response.ok) {
+      //   // If successful, redirect the browser to the profile page
+      //   alert('Order Placed!');
+      // } else {
+      //   alert(response.statusText);
+      // }
     }
 }
 
