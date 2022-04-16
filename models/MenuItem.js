@@ -56,7 +56,7 @@ MenuItem.init(
             beforeCreate: async (newMenuItem) => {
                 // newUserData.password = await bcrypt.hash(newUserData.password, 10);
 console.log("hook entered");
-                let queryKeyword = newMenuItem.name.replaceAll(" ", "+");
+                let queryKeyword = newMenuItem.name.replace(" ", "+");
                 let config = {
                     method: 'get',
                     url: `https://pixabay.com/api/?key=26638058-35c39bcab9bca3c7fa50f1a18&q=${queryKeyword}&image_type=photo&safesearch=true&per_page=3&category=food`,
