@@ -29,3 +29,6 @@ Below is link for application deployed using Heroku
 
 [The People Eatery](https://people-eatery.herokuapp.com/)
 
+Scan the QR code to view the live web site
+
+![The People Eatery QR](./Assets/PeopleEatery_QRCode.png)
