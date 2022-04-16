@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const axios = require('axios');
+require('dotenv').config();
 
 class MenuItem extends Model { }
 
@@ -56,10 +57,10 @@ MenuItem.init(
             beforeCreate: async (newMenuItem) => {
                 // newUserData.password = await bcrypt.hash(newUserData.password, 10);
 console.log("hook entered");
-                let queryKeyword = newMenuItem.name.replaceAll(" ", "+");
+                let queryKeyword = newMenuItem.name.replace(" ", "+");
                 let config = {
                     method: 'get',
-                    url: `https://pixabay.com/api/?key=26638058-35c39bcab9bca3c7fa50f1a18&q=${queryKeyword}&image_type=photo&safesearch=true&per_page=3&category=food`,
+                    url: `https://pixabay.com/api/?key=${process.env.PixbayKey}&q=${queryKeyword}&image_type=photo&safesearch=true&per_page=3&category=food`,
 
                 };
 
@@ -69,8 +70,7 @@ console.log("hook entered");
                         if (response.data.hits.length>0 && response.data.hits[0].previewURL) {
                             let url = response.data.hits[0].previewURL;
                             newMenuItem.imageUrl = url;
-                            console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~URL~~~~~~~~~~~~~~~~~~~~~~~");
-                            console.log(url);
+                            
                         }
 
 
