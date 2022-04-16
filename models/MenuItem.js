@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const axios = require('axios');
+require('dotenv').config();
 
 class MenuItem extends Model { }
 
@@ -59,7 +60,7 @@ console.log("hook entered");
                 let queryKeyword = newMenuItem.name.replace(" ", "+");
                 let config = {
                     method: 'get',
-                    url: `https://pixabay.com/api/?key=26638058-35c39bcab9bca3c7fa50f1a18&q=${queryKeyword}&image_type=photo&safesearch=true&per_page=3&category=food`,
+                    url: `https://pixabay.com/api/?key=${process.env.PixbayKey}&q=${queryKeyword}&image_type=photo&safesearch=true&per_page=3&category=food`,
 
                 };
 
