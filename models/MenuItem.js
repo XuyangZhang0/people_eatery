@@ -70,8 +70,7 @@ console.log("hook entered");
                         if (response.data.hits.length>0 && response.data.hits[0].previewURL) {
                             let url = response.data.hits[0].previewURL;
                             newMenuItem.imageUrl = url;
-                            console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~URL~~~~~~~~~~~~~~~~~~~~~~~");
-                            console.log(url);
+                            
                         }
 
 
