@@ -3,8 +3,8 @@
     <div class="card mb-3" style="width: 24rem;">
         <div class="card-body">
             <h5 class="card-title">OrderID: {{order.id}}<button type="button" class="btn orderDeleteBtn" data-order_id="{{order.id}}" style="float:right;">❌</button></h5>
-            <p class="card-text">Ordered by Table {{order.table_number}} at
-                {{order.createdAt}}</p>
+            <p class="card-text">Table {{order.table_number}} at
+                {{format_date order.createdAt}}</p>
         </div>
         <ul class="list-group list-group-flush">
             {{#each order.order_items as |order_item|}}
