@@ -1,7 +1,7 @@
 var cartItemTemplate = `<div class='row mb-4 d-flex justify-content-between align-items-center cartItem' id='{{cartitem.id}}'>
 <div class='col-md-2 col-lg-2 col-xl-2'>
   <img
-    src='{{cartitem.ImageUrl}}'
+    src='{{cartitem.imageurl}}'
     class='img-fluid rounded-3' alt='{{cartitem.name}}'>
 </div>
 <div class='col-md-3 col-lg-3 col-xl-3'>
@@ -103,6 +103,7 @@ const orderSubmit = () =>{
         headers: { 'Content-Type': 'application/json' },
       }).then((response )=>{
        alert("Order placed!!")
+       localStorage.removeItem("cartItems");
        document.location.replace("/");
       }).catch((error) =>{
         console.log(error);
