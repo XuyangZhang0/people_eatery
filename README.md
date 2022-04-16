@@ -1,20 +1,21 @@
 # The People Eatery
-People Eatery is a virtual menu application which would help users with view the menu, place the order. It provides the additional capability of order updation and deletion based on user privileges. This application has two user personas where an User as restaurent ower can login, place orders for guests as per Table Number, update the order status as when delivered and delete the order which couldn't be served other as Geast who can view menu and place the order.
+People Eatery is a virtual menu application which would help users view the menu and place an order. It provides the additional capability of order updating and deletion based on user privileges. This application has two user personas where an User, as restaurent owner, can log in, place orders for guests as per Table Number, update the order status when delivered, and delete the order which could not be served. The other is Guest who can view the menu and place an order.
 
-Application uses Node.js, Express.js, Handlebars.js, Bulma Extensions (Accordian), Authetication module with session, Axios (Third party Api call from Node) with API keys and config in .env file. Also the application is deployed using Heroku.
+This application uses Node.js, Express.js, Handlebars.js, Bulma Extensions (Accordian), Authetication module with session, Axios (Third party Api call from Node) with API keys and config in .env file. Also the application is deployed using Heroku.
 
-Features of the application includes
-* On the application load, Menu Items list with category accordians is displayed with the navigations options(Menu|Cart|Order|Login) at the Top right corner.
-* On click of Login option, owner is prompted to login to the application, if not can sign up and login.
-* User can add the menu items to the cart by clicking Add to Cart button on Menu item.
-* On click of Cart Icon on the Navigation bar, menuitems gets added to cart and will navigate to the cart page.
-* User will be able to manipulate the cart by changing the quantity and total price of the items in the cart will be displayed.
-* On click of Order button on Cart page, order will be placed in the data base against the entered table number.
-* As logged in Owner, on clicking the Order link in the navigation bar, user is navigated to Orders page.
-* On the Orders page load, all orders  from the database are displayed.
-* As when the ordered item is delivered to the guest, the Order can be updated with order item status.
-* Also there is facility to delete order by the Owner.
-* The site is also responsive for the guest user to scan QR code and view the digital menu on mobile screen.
+## Main Features
+
+* On the application load, Menu Items listed with category accordians are displayed with navigation options (Menu|Cart|Order|Login) at the top right corner.
+* When clicking the "Login" option the User is prompted to log in to the application. If the User does not have a login, they can sign up and log in.
+* The User can add menu items to the cart by clicking the Add to Cart button under the menu item.
+* When clicking the Cart Icon on the Navigation bar, menu items are added to the cart and will navigate to the cart page.
+* The User will be able to manipulate the cart by changing the quantity, and the total price of the items in the cart will be displayed.
+* When clicking the "Order" button on the cart page, the order will be placed in the database next to the entered table number.
+* As the logged-in Owner, by clicking the Order link in the navigation bar, the User is navigated to the Orders page.
+* When the "Orders" page loads, all orders from the database are displayed.
+* When the ordered item is delivered to the guest, the Order can be updated with the order item "status."
+* Also, the User has facility to delete the order.
+* The site is also responsive for the Guest user to scan a QR code and view the digital menu on a mobile screen.
 
 ## Mock-Up
 
