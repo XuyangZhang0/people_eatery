@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const {  User, Guest, MenuItem, Order, Category, OrderItem } = require('../models');
 const withAuth = require('../utils/auth');
+const axios = require('axios');
+
 
 router.get('/', async (req, res) => {
   try {
@@ -8,11 +10,12 @@ router.get('/', async (req, res) => {
     const categoryData = await Category.findAll({
       include: [ { model: MenuItem} ],
     });
+      
     
-
-    // Serialize data so the template can read it
     const menu = categoryData.map((menuItem) => menuItem.get({ plain: true }));
-    console.log(menu);
+ 
+
+    // console.log(menu);
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       menu,
@@ -22,6 +25,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 // router.get('/menuItem/:id', async (req, res) => {
 //   try {
